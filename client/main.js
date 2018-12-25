@@ -36,9 +36,10 @@ const handleSubmit = (e) => {
 Meteor.startup(() => {
     Tracker.autorun(() => {
         let players = Players.find().fetch();
+        let title = "Score Keeper";
         let jsx = (
             <div>
-                <TitleBar/>
+                <TitleBar title={title}/>
                 {renderPlayers(players)}
                <AddPlayer/>
                <form onSubmit={handleSubmit}>
