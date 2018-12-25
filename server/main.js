@@ -1,7 +1,6 @@
-// import './../imports/utils';
-import {greetUser, name} from './../imports/utils';
-import {add} from './../imports/math';
+import {Meteor} from 'meteor/meteor';
+import {Players} from './../imports/api/players';
 
-console.log('Log from /server/main.js');
-console.log(greetUser());
-console.log(add(4, 16));
+Meteor.startup(function() {
+    console.log(Players.find().fetch());
+});
